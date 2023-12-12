@@ -40,7 +40,10 @@ namespace ef_core_sql_server_merge_bug
 			builder.Property(i => i.Position).ValueGeneratedOnAddOrUpdate();
 
 
-			builder.ToTable("vw_SomeEntity");
+			builder.ToTable("vw_SomeEntity", t =>
+			{
+				t.HasTrigger("asdfasdf");
+			});
 		}
 	}
 
